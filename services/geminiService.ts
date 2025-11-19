@@ -43,9 +43,23 @@ export const getDailyWisdom = async (): Promise<GeneratedContent> => {
 
 export const getProphetStory = async (prophetName: string): Promise<GeneratedContent> => {
   try {
+    const prompt = `
+      Escribe una historia detallada y emocionante sobre el Profeta ${prophetName} para niños de 8 a 10 años.
+      La historia debe tener unas 300 palabras aproximadamente.
+      Evita mencionar representaciones físicas del profeta.
+      Estructura la historia para que sea fácil de leer.
+      Incluye:
+      1. Quién era y dónde vivía.
+      2. El mensaje que Allah le dio.
+      3. El gran milagro o evento principal.
+      4. Una lección clara al final.
+      
+      Devuelve el resultado en formato JSON con los campos: 'title' (un título llamativo) y 'content' (el texto completo de la historia).
+    `;
+
     const response = await ai.models.generateContent({
       model: modelId,
-      contents: `Cuéntame la historia del Profeta ${prophetName} resumida para un niño de 7 años. Hazla emocionante y educativa. Enfatiza su lección principal. Formato JSON: title, content.`,
+      contents: prompt,
       config: {
         responseMimeType: "application/json",
         responseSchema: {
@@ -63,7 +77,7 @@ export const getProphetStory = async (prophetName: string): Promise<GeneratedCon
   } catch (error) {
     return {
       title: `Historia de ${prophetName}`,
-      content: "Hubo un pequeño error conectando con la biblioteca de historias. ¡Inténtalo de nuevo pronto!"
+      content: "Hubo un pequeño error conectando con la biblioteca de historias. Por favor, verifica tu conexión e inténtalo de nuevo. Insha'Allah funcionará pronto."
     };
   }
 };

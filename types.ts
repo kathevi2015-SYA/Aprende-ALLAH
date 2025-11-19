@@ -9,6 +9,7 @@ export enum GameType {
 export interface Prophet {
   id: number;
   name: string;
+  imagePrompt: string; // Added for specific imagery
 }
 
 export interface TriviaQuestion {
