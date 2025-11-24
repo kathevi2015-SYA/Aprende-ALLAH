@@ -23,6 +23,7 @@ export interface GeneratedContent {
   content: string;
   arabic?: string;
   translation?: string;
+  imagePrompt?: string;
 }
 
 export interface Point {

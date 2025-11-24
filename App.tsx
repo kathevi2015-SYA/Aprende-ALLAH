@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
@@ -8,10 +9,13 @@ import ProphetStories from './pages/ProphetStories';
 import Gallery from './pages/Gallery';
 import Games from './pages/Games';
 import MazeGame from './pages/games/MazeGame';
-import ConnectDots from './pages/games/ConnectDots';
+import MosqueRunGame from './pages/games/MosqueRunGame';
 import TriviaGame from './pages/games/TriviaGame';
 import PacmanGame from './pages/games/PacmanGame';
 import RiddlesGame from './pages/games/RiddlesGame';
+import JihadGame from './pages/games/JihadGame';
+import IsmiGame from './pages/games/IsmiGame';
+import PuzzleGame from './pages/games/PuzzleGame';
 import Contact from './pages/Contact';
 
 const App: React.FC = () => {
@@ -28,9 +32,12 @@ const App: React.FC = () => {
             <Route path="/galeria" element={<Gallery />} />
             <Route path="/juegos" element={<Games />} />
             <Route path="/juegos/laberinto" element={<MazeGame />} />
-            <Route path="/juegos/puntos" element={<ConnectDots />} />
+            <Route path="/juegos/carrera" element={<MosqueRunGame />} />
             <Route path="/juegos/trivia" element={<TriviaGame />} />
             <Route path="/juegos/galletas" element={<PacmanGame />} />
+            <Route path="/juegos/jihad" element={<JihadGame />} />
+            <Route path="/juegos/ismi" element={<IsmiGame />} />
+            <Route path="/juegos/puzzle" element={<PuzzleGame />} />
             <Route path="/juegos/adivinanzas" element={<RiddlesGame />} />
             <Route path="/contacto" element={<Contact />} />
           </Routes>

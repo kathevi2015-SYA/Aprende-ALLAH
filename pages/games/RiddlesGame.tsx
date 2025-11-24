@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getRiddle } from '../../services/geminiService';
-import { HelpCircle, Eye, RefreshCw } from 'lucide-react';
+import { HelpCircle, Eye, RefreshCw, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const RiddlesGame: React.FC = () => {
   const [currentRiddle, setCurrentRiddle] = useState<{riddle: string, answer: string} | null>(null);
@@ -21,6 +22,12 @@ const RiddlesGame: React.FC = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-12 text-center">
+      <div className="text-left mb-4">
+        <Link to="/juegos" className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-800 font-bold transition-colors">
+          <ArrowLeft className="w-5 h-5" /> Volver a Juegos
+        </Link>
+      </div>
+
       <h1 className="text-4xl font-bold text-orange-500 mb-8">Adivina Adivinador</h1>
 
       <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-orange-200 relative">

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { PROPHETS } from '../constants';
 import { getProphetStory } from '../services/geminiService';
 import { GeneratedContent, Prophet } from '../types';
-import { BookOpen, X, Loader2, Sparkles } from 'lucide-react';
+import { BookOpen, X, Loader2, Sparkles, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProphetStories: React.FC = () => {
   const [selectedProphet, setSelectedProphet] = useState<Prophet | null>(null);
@@ -33,6 +34,11 @@ const ProphetStories: React.FC = () => {
   return (
     <div className="min-h-screen bg-emerald-50/50">
       <div className="max-w-7xl mx-auto px-4 py-12">
+        
+        <Link to="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-800 font-bold mb-8 transition-colors bg-white px-4 py-2 rounded-full shadow-sm">
+          <ArrowLeft className="w-5 h-5" /> Volver al Inicio
+        </Link>
+
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-5xl font-bold text-emerald-800 drop-shadow-sm">
             Historias de los Profetas
